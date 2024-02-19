@@ -1,0 +1,45 @@
+﻿
+@model List<TaskWebApplication.Models.Employee>
+@{
+    ViewData["Title"] = "Index Page";
+}
+<div class="col-6">
+    <input type="text" placeholder="Search Here..." id="kk" class="form-control m-1 float-end" style="width:50"
+</div>
+<table class="table table-bordered table-responsive table-hover">
+
+    <tr>
+
+        <th> Emp_Id</th>
+        <th> Name</th>
+        <th> Mobile</th>
+        <th> Email</th>
+        <th> Address</th>
+        <th> Salary</th>
+        <th> DOJ</th>
+        <th> Details</th>
+        
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Emp_Id</td>
+            <td>@item.Name</td>
+            <td>@item.Mobile</td>
+            <td>@item.Email</td>
+            <td>@item.Address</td>
+            <td>@item.Salary</td>
+            <td>@item.DOJ</td>
+            
+            <td><a class="btn btn-warning" asp-action="Details" asp-controller="Home" asp-route-Id="@item.Emp_Id">Deatils </a></td>
+            
+
+
+        </tr>
+    }
+</table>
+@section scripts{
+    <script src="/js/Search.js"></script>
+}

@@ -1,0 +1,53 @@
+﻿@model TaskWebApplication.Models.Employee
+
+@{
+    ViewData["Title"] = "Add_Emp";
+}
+<h1>AddEmp</h1>
+
+
+<form asp-action="AddEmp" asp-controller="Home" method="post">
+    <input asp-for="Emp_Id" type="hidden" />
+
+    <div class="form-group col-md-3">
+        <label> Name </label>
+        <input asp-for="Name" class="form-control" type="text" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group col-md-3">
+        <label> Mobile </label>
+        <input asp-for="Mobile" class="form-control" type="text" />
+        <span class="text-danger" asp-validation-for="Mobile"></span>
+    </div>
+
+    <div class="form-group col-md-3">
+    <label> Email </label>
+    <input asp-for="Email" class="form-control" type="email" />
+    <span class="text-danger" asp-validation-for="Email"></span>
+   </div>
+
+    <div class="form-group col-md-3">
+        <label> Address </label>
+        <input asp-for="Address" class="form-control" type="text" />
+        <span class="text-danger" asp-validation-for="Address"></span>
+    </div>
+
+    <div class="form-group col-md-3">
+        <label> Salary </label>
+        <input asp-for="Salary" class="form-control" type="text" />
+        <span class="text-danger" asp-validation-for="Salary"></span>
+    </div>
+
+    <div class="form-group col-md-3">
+        <label asp-for="DOJ">Date of Joining</label>
+        <input asp-for="DOJ" class="form-control" type="date" />
+    </div>
+
+    <br/>
+
+    <button type="submit" class="btn btn-primary">Add Employee</button>
+    
+</form>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<partial name="_ValidationScriptsPartial"></partial>
